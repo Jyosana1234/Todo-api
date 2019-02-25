@@ -3,11 +3,11 @@ const {ObjectID} =  require('mongodb');
 const {mongoose} = require('./../server/db/mongoose');
 const {Todo} = require('./../server/models/todo');
 
-var id = "5c728193b21ebc0538c3abba";
+// var id = "5c728193b21ebc0538c3abba";
 
-if(!ObjectID.isValid(id)){
-  console.log('Id not valid');
-}
+// if(!ObjectID.isValid(id)){
+//   console.log('Id not valid');
+// }
 
 // Todo.find({
 //   _id : id
@@ -25,7 +25,7 @@ Todo.findById(id).then((todo)=>{
   if(!todo){
     return console.log('Id not found');
   }
-console.log('Todo By Id',todo);
+  console.log(JSON.stringify(todo, undefined, 2));
 }).catch((e)=>{
   console.log(e);
 })
